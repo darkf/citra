@@ -104,7 +104,7 @@ void GenericLog(LOGTYPES_LEVELS level, LOGTYPES_TYPE type, const char*file, int 
 #endif // loglevel
 #endif // logging
 
-#ifdef MSVC_VER
+#ifdef _MSC_VER
 #ifndef __func__
 #define __func__ __FUNCTION__
 #endif
@@ -149,7 +149,7 @@ void GenericLog(LOGTYPES_LEVELS level, LOGTYPES_TYPE type, const char*file, int 
 #define _assert_(_a_) _dbg_assert_(MASTER_LOG, _a_)
 
 #ifndef GEKKO
-#ifdef MSVC_VER
+#ifdef _MSC_VER
 #define _assert_msg_(_t_, _a_, _fmt_, ...)        \
     if (!(_a_)) {\
         if (!PanicYesNo(_fmt_, __VA_ARGS__)) {Crash();} \
@@ -159,7 +159,7 @@ void GenericLog(LOGTYPES_LEVELS level, LOGTYPES_TYPE type, const char*file, int 
     if (!(_a_)) {\
         if (!PanicYesNo(_fmt_, ##__VA_ARGS__)) {Crash();} \
     }
-#endif // MSVC_VER
+#endif // _MSC_VER
 #else // GEKKO
 #define _assert_msg_(_t_, _a_, _fmt_, ...)
 #endif
