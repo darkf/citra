@@ -8,7 +8,7 @@
 #include "common/msg_handler.h"
 #include "common/logging/log.h"
 
-#ifdef MSVC_VER
+#ifdef _MSC_VER
 #ifndef __func__
 #define __func__ __FUNCTION__
 #endif
