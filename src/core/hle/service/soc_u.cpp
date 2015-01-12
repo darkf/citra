@@ -5,8 +5,6 @@
 #include "common/platform.h"
 
 #if EMU_PLATFORM == PLATFORM_WINDOWS
-// WSAPoll functionality doesn't exist before WinNT 6.x
-#define _WIN32_WINNT 0x0600
 #include <winsock2.h>
 #include <ws2tcpip.h>
 
